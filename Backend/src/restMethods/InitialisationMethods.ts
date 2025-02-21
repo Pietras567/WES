@@ -43,7 +43,7 @@ app.post("/init", authenticateJWT(["MANAGER"]), async (req: Request, res: Respon
             // @ts-ignore
             const category = await categories.findOne({where: {_id: categoryId}});
             if (!category) {
-                return res.status(404).json({error: "Category not found"});
+                return res.status(404).json({error: "Category not found."});
             }
 
             // Tworzymy nowy produkt

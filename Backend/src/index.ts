@@ -34,7 +34,7 @@ import "./restMethods/UserAccountMethods";
  * - logging: Enable logging for database operations (true).
  * - entities: Specifies the entities/models that will be used in this data source.
  */
-export const AppDataSource = new DataSource({
+export let AppDataSource = new DataSource({
     type: "postgres",
     host: "localhost",
     port: 5432,
@@ -47,6 +47,15 @@ export const AppDataSource = new DataSource({
     entities: [Category, ProductItem, Order, Product, OrderStatus, User, Opinion, Account],
 
 });
+
+/**
+ * Updates the AppDataSource to a new instance.
+ *
+ * @param {DataSource} newDataSource - The new DataSource instance to use.
+ */
+export function updateDataSource(newDataSource: DataSource): void {
+    AppDataSource = newDataSource;
+}
 
 /**
  * Initializes the database connection and starts the server.

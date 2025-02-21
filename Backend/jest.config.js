@@ -9,5 +9,6 @@ module.exports = {
     },
     transformIgnorePatterns: ['<rootDir>/node_modules/'],
     setupFilesAfterEnv: ['./jest.setup.ts'],
+    forceExit: true,
     // inne opcje konfiguracji
 };
